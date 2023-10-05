@@ -23,11 +23,11 @@ export const BodyTimer = () => {
           </button>
 
           <button>
-            <Timer size={64} color={defaultTheme['gray-100']} />
+            <Timer size={64} color={defaultTheme['icons-color']} />
           </button>
 
           <button>
-            <SpeakerLow size={64} color={defaultTheme['gray-100']} />
+            <SpeakerLow size={64} color={defaultTheme['icons-color']} />
           </button>
         </ButtonsContainer>
       </Icons>

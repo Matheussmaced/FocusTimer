@@ -1,10 +1,12 @@
-export const defaultTheme = {
-  black: '#000',
-  white: 'FFFFFF',
+export const lightTheme = {
+  background: '#F8F8FC',
 
-  'gray-900': '#121214',
   'gray-500': '#242424',
-  'gray-100': '#F8F8FC',
+
+  'text-color': '#121214',
+  'icons-color': '#F8F8FC',
+
+  'icon-toggle': '#121214',
 
   'green-light': '#42D3FF',
 }

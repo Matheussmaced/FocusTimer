@@ -8,7 +8,7 @@ export const BodyTimerContainer = styled.div`
 `
 
 export const TimerContainer = styled.span`
-  color: ${(props) => props.theme['gray-100']};
+  color: ${(props) => props.theme['text-color']};
 
   font-size: 6rem;
   margin: 0 2rem 2rem 2rem;

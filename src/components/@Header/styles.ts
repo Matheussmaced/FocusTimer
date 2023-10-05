@@ -1,3 +1,4 @@
+import { Sun } from 'phosphor-react'
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.div`
@@ -10,4 +11,7 @@ export const HeaderContainer = styled.div`
 
     cursor: pointer;
   }
+`
+export const SunIcon = styled(Sun)`
+  color: ${(props) => props.theme['icon-toggle']};
 `

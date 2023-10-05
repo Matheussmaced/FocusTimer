@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${(props) => props.theme['gray-900']};
+    background-color: ${(props) => props.theme.background};
     font-family: 'Roboto', sans-serif;
 
     padding: 1.562rem;
