@@ -1,4 +1,4 @@
-import { defaultTheme } from '../themes/default'
+import { defaultTheme } from '../styles/themes/default'
 import {
   BodyTimerContainer,
   ButtonsContainer,

@@ -10,10 +10,12 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${(props) => props.theme['gray-900']};
     font-family: 'Roboto', sans-serif;
+
+    padding: 1.562rem;
   }
 
   :focus {
     outline: 0;
-    box-shadow: 0 0 0 2px #333;
+    
   }
 `
