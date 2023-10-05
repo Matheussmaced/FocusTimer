@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: ${(props) => props.theme['gray-900']};
+    font-family: 'Roboto', sans-serif;
   }
 
   :focus {
