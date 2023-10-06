@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+
 import { defaultTheme } from '../styles/themes/default'
 import {
   BodyTimerContainer,
@@ -8,17 +10,47 @@ import {
 import { PlayCircle, SpeakerLow, Timer } from 'phosphor-react'
 
 export const BodyTimer = () => {
+  const [secounds, setSecounds] = useState(0)
+  const [minutes, setMinutes] = useState(25)
+  const [startTimer, setStartTimer] = useState(false)
+
+  useEffect(() => {
+    if (startTimer) {
+      const interval = setInterval(() => {
+        if (secounds > 0) {
+          setSecounds(secounds - 1)
+        } else {
+          setSecounds(59)
+        }
+
+        if (secounds === 0) {
+          setMinutes(minutes - 1)
+        }
+      }, 1000)
+
+      return () => clearInterval(interval)
+    }
+  }, [secounds, minutes, startTimer])
+
+  function startNewCycleAndPause() {
+    if (!startTimer) {
+      setStartTimer(true)
+    }
+
+    return setStartTimer(!startTimer)
+  }
+
   return (
     <BodyTimerContainer>
       <TimerContainer>
-        <span>25</span>
+        <span>{minutes < 10 ? `0${minutes}` : minutes}</span>
         <span>:</span>
-        <span>00</span>
+        <span>{secounds < 10 ? `0${secounds}` : secounds}</span>
       </TimerContainer>
 
       <Icons>
         <ButtonsContainer>
-          <button>
+          <button onClick={startNewCycleAndPause}>
             <PlayCircle size={64} color={defaultTheme['green-light']} />
           </button>
 
