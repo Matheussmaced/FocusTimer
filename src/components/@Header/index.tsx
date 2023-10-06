@@ -3,7 +3,6 @@ import { defaultTheme } from '../styles/themes/default'
 import { HeaderContainer, SunIcon } from './styles'
 
 import { DefaultTheme } from 'styled-components/dist/types'
-import { useState } from 'react'
 
 interface HeaderProps {
   themeToggle: () => void

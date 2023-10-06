@@ -10,9 +10,9 @@ import {
 import { PlayCircle, SpeakerLow, Timer } from 'phosphor-react'
 
 export const BodyTimer = () => {
-  const [secounds, setSecounds] = useState(0)
-  const [minutes, setMinutes] = useState(25)
-  const [startTimer, setStartTimer] = useState(false)
+  const [secounds, setSecounds] = useState<number>(0)
+  const [minutes, setMinutes] = useState<number>(25)
+  const [startTimer, setStartTimer] = useState<boolean>(false)
 
   useEffect(() => {
     if (startTimer) {
