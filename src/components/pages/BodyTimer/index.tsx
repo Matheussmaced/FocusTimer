@@ -1,13 +1,15 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
-import { defaultTheme } from '../styles/themes/default'
+import useSound from 'use-sound'
+
+import { defaultTheme } from '../../styles/themes/default'
 import {
   BodyTimerContainer,
   ButtonsContainer,
   Icons,
   TimerContainer,
 } from './styles'
-import { PlayCircle, SpeakerLow, Timer } from 'phosphor-react'
+import { PauseCircle, PlayCircle, SpeakerLow, Timer } from 'phosphor-react'
 
 export const BodyTimer = () => {
   const [secounds, setSecounds] = useState<number>(0)
@@ -35,9 +37,17 @@ export const BodyTimer = () => {
   function startNewCycleAndPause() {
     if (!startTimer) {
       setStartTimer(true)
+
+      soundPlay()
     }
 
     return setStartTimer(!startTimer)
+  }
+
+  const [play] = useSound('../../sounds/pop-down.mp3', { volume: 0.25 })
+
+  const soundPlay = () => {
+    play()
   }
 
   return (
@@ -51,7 +61,11 @@ export const BodyTimer = () => {
       <Icons>
         <ButtonsContainer>
           <button onClick={startNewCycleAndPause}>
-            <PlayCircle size={64} color={defaultTheme['green-light']} />
+            {startTimer ? (
+              <PauseCircle size={64} color={defaultTheme['green-light']} />
+            ) : (
+              <PlayCircle size={64} color={defaultTheme['green-light']} />
+            )}
           </button>
 
           <button>

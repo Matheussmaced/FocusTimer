@@ -1,12 +1,12 @@
 import { Moon } from 'phosphor-react'
-import { defaultTheme } from '../styles/themes/default'
+import { defaultTheme } from '../../styles/themes/default'
 import { HeaderContainer, SunIcon } from './styles'
 
 import { DefaultTheme } from 'styled-components/dist/types'
 
 interface HeaderProps {
-  themeToggle: () => void
-  theme: DefaultTheme[string]
+  themeToggle?: () => void
+  theme?: DefaultTheme[string]
 }
 
 export const Header = ({ themeToggle, theme }: HeaderProps) => {
